@@ -1,0 +1,15 @@
+{
+  "name": "catalog-api",
+  "version": "1.0.0",
+  "description": "Expose a product recommandation API",
+  "main": "step1-loading.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "bulteau",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parser": "^2.3.1",
+    "fs": "0.0.1-security"
+  }
+}
