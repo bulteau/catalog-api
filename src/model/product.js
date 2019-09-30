@@ -23,5 +23,11 @@ module.exports = (sequelize, type) => {
       url: {
         type: type.STRING
       },
+      dominantColor: {
+        type: type.JSON
+      },
+      imagePropertiesAnnotation: {
+        type: type.JSON
+      }
     })
 }

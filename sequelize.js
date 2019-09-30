@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 const config = require('./site-config');
-const ProductModel = require('./src//model/product');
+const ProductModel = require('./src/model/product');
 
 
 const sequelize = new Sequelize(config.dbName, config.dbUser, config.dbPwd, {

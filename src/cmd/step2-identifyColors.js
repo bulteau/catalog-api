@@ -1,15 +1,37 @@
-async function quickstart() {
-  // Imports the Google Cloud client library
-  const vision = require('@google-cloud/vision');
+const { Product } = require('../../sequelize');
+const vision = require('@google-cloud/vision');
 
+// Get dominant color from Google Vision API
+async function getDominantColor(product) {
   // Creates a client
   const client = new vision.ImageAnnotatorClient();
 
   // Performs label detection on the image file
-  const [result] = await client.imageProperties('http://image1.lacoste.com/dw/image/v2/AAQM_PRD/on/demandware.static/Sites-FR-Site/Sites-master/default/L1312_240_24.jpg?sw=458&sh=443');
-  console.log(result.imagePropertiesAnnotation.dominantColors);
+  const [result] = await client.imageProperties('https:' + product.photo);
   const dominantColors = result.imagePropertiesAnnotation.dominantColors.colors;
-  console.log('dominantColors:');
-  dominantColors.forEach(label => console.log(label));
+  return {...product, dominantColor: dominantColors[0].color, imagePropertiesAnnotation: result.imagePropertiesAnnotation};
 }
-quickstart();
+
+
+Product.findAll(
+  {attributes: ['id', 'photo']}
+).then(function(response){
+    //response.map((p) => console.log(p.dataValues));
+    Promise.all(response.map(product =>
+      getDominantColor(product.dataValues)
+      .then(
+        (data) => {
+          Product.update(
+            { dominantColor: data.dominantColor, imagePropertiesAnnotation: data.imagePropertiesAnnotation },
+            { where: { id: data.id } }
+          );
+        }
+      )
+    ))
+    .then(data => {
+      console.log(`Find ${data.length} dominant colors product`);
+    });
+})
+.catch(function(error){
+    console.log(error);
+});
