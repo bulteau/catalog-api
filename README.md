@@ -17,3 +17,10 @@ cons : could be slower with a large dataset
 
 Launch this command line to load your data
 `node src/cmd/step1-loading.js path/to/file.csv`
+
+### Step 2 - Identify color for each products
+**prerequisite :**
+- A key authentification configured on your env : [see more](https://cloud.google.com/docs/authentication/getting-started#auth-cloud-implicit-nodejs)
+
+Launch this command line
+`node src/cmd/step2-identifyColors.js`
