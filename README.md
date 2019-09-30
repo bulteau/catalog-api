@@ -6,12 +6,13 @@ Expose a product recommandation API
 pros : faster to develop
 cons : could be slower with a large dataset
 - DB : Postgres
-- API : express
+- Web Framework : express
 
 ## How to use it
 
 ### Step 1 - loading csv data
 **prerequisite :**
+- Node installed
 - CSV file with comma delimiter
 - Postgres DB available, you can install it quickly with Docker `docker run --name catalog-postgres -e POSTGRES_PASSWORD=kT6xMdTqahVCvYAN -e POSTGRES_USER=catalog-user -e POSTGRES_DB=catalog-db -d postgres`
 
@@ -24,3 +25,9 @@ Launch this command line to load your data
 
 Launch this command line
 `node src/cmd/step2-identifyColors.js`
+
+
+### Step 3 - API ENDPOINTS
+
+Launch this command line
+`node`

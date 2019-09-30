@@ -2,7 +2,7 @@
   "name": "catalog-api",
   "version": "1.0.0",
   "description": "Expose a product recommandation API",
-  "main": "step1-loading.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
