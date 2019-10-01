@@ -28,11 +28,10 @@ app.get('/api/recommandation/:productId?', (req, res) => {
           product.dominant_color_a,
           product.dominant_color_b
         );
-        //return Product.findAll({ where: {gender_id: product.gender_id}});
       } else {
         return {error: true, msg: `This product doesn't exist`};
       }
     })
-    .then(product => res.json(product));
+    .then(products => res.json(products));
 
 })

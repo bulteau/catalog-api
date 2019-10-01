@@ -15,7 +15,7 @@ if(args && args.length > 0) {
         .then(() => {
           Product.bulkCreate(results, {returning: true})
           .then(function(response){
-              console.log(`${response.length} products added`);
+              console.log('\x1b[32m', `${response.length} products added`, '\x1b[37m');
           })
           .catch(function(error){
               console.log(error);
