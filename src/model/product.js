@@ -23,10 +23,16 @@ module.exports = (sequelize, type) => {
       url: {
         type: type.STRING
       },
-      dominantColor: {
-        type: type.JSON
+      dominant_color_l: {
+        type: type.FLOAT
       },
-      imagePropertiesAnnotation: {
+      dominant_color_a: {
+        type: type.FLOAT
+      },
+      dominant_color_b: {
+        type: type.FLOAT
+      },
+      image_properties_annotation: {
         type: type.JSON
       }
     })

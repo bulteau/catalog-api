@@ -7,6 +7,7 @@ pros : faster to develop
 cons : could be slower with a large dataset
 - DB : Postgres
 - Web Framework : express
+- Color Proximity Calcul : colour-proximity
 
 ## How to use it
 
@@ -30,4 +31,7 @@ Launch this command line
 ### Step 3 - API ENDPOINTS
 
 Launch this command line
-`node`
+`node index.js`
+
+Go to : http://localhost:3000/api/recommandation/[productid]
+Example : http://localhost:3000/api/recommandation/L1212-00-001

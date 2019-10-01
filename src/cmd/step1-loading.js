@@ -1,6 +1,6 @@
 const csv = require('csv-parser');
 const fs = require('fs');
-const { Product } = require('../../sequelize');
+const { Product, sequelize } = require('../../sequelize');
 
 const results = [];
 
@@ -11,14 +11,16 @@ if(args && args.length > 0) {
     .pipe(csv({ separator: ';' }))
     .on('data', (data) => results.push(data))
     .on('end', () => {
-      // Create all products
-      Product.bulkCreate(results, {returning: true})
-      .then(function(response){
-          console.log(response);
-      })
-      .catch(function(error){
-          console.log(error);
-      })
+      sequelize.sync()
+        .then(() => {
+          Product.bulkCreate(results, {returning: true})
+          .then(function(response){
+              console.log(`${response.length} products added`);
+          })
+          .catch(function(error){
+              console.log(error);
+          })
+        });
     });
 } else {
   console.log("Wrong parameter");

@@ -11,12 +11,18 @@ const sequelize = new Sequelize(config.dbName, config.dbUser, config.dbPwd, {
 
 const Product = ProductModel(sequelize, Sequelize);
 
-sequelize.sync()
-  .then(() => {
-    console.log(`Database & tables created!`)
-  });
-
+/*
+Function using https://github.com/gausie/colour-proximity alogorithm
+maxScore declare a threshold : 0 is maximum proximity, 1 is minimum proximity
+*/
+async function requestProximity(l, a, b, maxScore = 0.2) {
+  return await sequelize.query('SELECT * FROM products WHERE (sqrt(power(dominant_color_l - ?, 2) + power(dominant_color_a - ?, 2) + power(dominant_color_b - ?, 2))) < ?',
+    { replacements: [l, a, b, maxScore], type: sequelize.QueryTypes.SELECT }
+  );
+}
 
 module.exports = {
-  Product
+  Product,
+  requestProximity,
+  sequelize
 }
