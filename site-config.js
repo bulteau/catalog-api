@@ -3,5 +3,5 @@ module.exports = {
   dbUser: `catalog-user`,
   dbPwd: `kT6xMdTqahVCvYAN`,
   dbHost: `localhost`,
-  dbPort: 54320,
+  dbPort: 5432,
 };

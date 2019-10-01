@@ -8,6 +8,7 @@ cons : could be slower with a large dataset
 - DB : Postgres
 - Web Framework : express
 - Color Proximity Calcul : colour-proximity
+- image-downloader
 
 ## How to use it
 
@@ -15,7 +16,7 @@ cons : could be slower with a large dataset
 **prerequisite :**
 - Node installed
 - CSV file with comma delimiter
-- Postgres DB available, you can install it quickly with Docker `docker run --name catalog-postgres -e POSTGRES_PASSWORD=kT6xMdTqahVCvYAN -e POSTGRES_USER=catalog-user -e POSTGRES_DB=catalog-db -d postgres`
+- Postgres DB available, you can install it quickly with Docker `docker run --name catalog-postgres -e POSTGRES_PASSWORD=kT6xMdTqahVCvYAN -e POSTGRES_USER=catalog-user -e POSTGRES_DB=catalog-db -p 5432:5432 -d postgres`
 
 Launch this command line to load your data
 `node src/cmd/step1-loading.js path/to/file.csv`
