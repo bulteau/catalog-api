@@ -1,8 +1,10 @@
 const express = require('express');
+var cors = require('cors');
 const bodyParser = require('body-parser');
 const { Product, requestProximity } = require('./sequelize');
 
 const app = express();
+app.use(cors());
 app.use(bodyParser.json());
 
 // API ENDPOINTS
