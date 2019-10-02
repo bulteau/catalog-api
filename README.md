@@ -42,7 +42,7 @@ TIPS : a Backup with Data from step 1 and 2 are available on data/backup-data.sq
 Launch this command line :  
 `node index.js`
 
-Go to : http://localhost:3000/api/recommandation/[productid]
+Go to : http://localhost:3000/api/recommandation/[productid]  
 Example : http://localhost:3000/api/recommandation/L1212-00-001
 
 
