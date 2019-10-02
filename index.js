@@ -26,6 +26,7 @@ app.get('/api/recommandation/:productId?', (req, res) => {
       if(product) {
 
         return requestProximity(
+          req.params.productId,
           product.dominant_color_l,
           product.dominant_color_a,
           product.dominant_color_b
