@@ -50,5 +50,5 @@ Also available : http://localhost:3000/api/products in order to list every produ
 
 - Used Score of the dominant color to exclude some erroneous classification
 - Improve API robustness (configure CORS, authentication...)
-- Manage Google Vision API error without download image
-- Add some Unit Test (nevertheless, some manual and basic functionnal test are possible with [catalog-front](https://github.com/bulteau/catalog-api))
+- Manage Google Vision API error without downloaded image
+- Add some Unit Test (nevertheless, some manual and basic functionnal test are possible with [catalog-front](https://github.com/bulteau/catalog-front))
