@@ -12,6 +12,9 @@ cons : could be slower with a large dataset
 
 ## How to use it
 
+### Step 0
+Clone this repo and npm install
+
 ### Step 1 - loading csv data
 **prerequisite :**
 - Node installed
@@ -40,3 +43,12 @@ Example : http://localhost:3000/api/recommandation/L1212-00-001
 
 
 Also available : http://localhost:3000/api/products in order to list every products
+
+
+
+## What's next
+
+- Used Score of the dominant color to exclude some erroneous classification
+- Improve API robustness (configure CORS, authentication...)
+- Manage Google Vision API error without download image
+- Add some Unit Test (nevertheless, some manual and basic functionnal test are possible with [catalog-front](https://github.com/bulteau/catalog-api))
