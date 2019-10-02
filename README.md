@@ -25,6 +25,9 @@ Clone this repo and npm install
 Launch this command line to load your data :  
 `node src/cmd/step1-loading.js path/to/file.csv`
 
+Exemple :  
+`node src/cmd/step1-loading.js data/products_eb_test_technique.csv`
+
 ### Step 2 - Identify color for each products
 **prerequisite :**
 - A key authentification configured on your env : [see more](https://cloud.google.com/docs/authentication/getting-started#auth-cloud-implicit-nodejs)
@@ -32,7 +35,7 @@ Launch this command line to load your data :
 Launch this command line to populate database with Metadata from Google Vision API :  
 `node src/cmd/step2-identifyColors.js`
 
-All Backup Data from step 1 and 2 : backup-data.sql
+TIPS : a Backup with Data from step 1 and 2 are available on data/backup-data.sql
 
 ### Step 3 - API ENDPOINTS
 
